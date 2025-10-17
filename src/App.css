@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+.gradient-button {
+  background: linear-gradient(90deg, #a64ca6, #ff66cc);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+.gradient-button:hover {
+  opacity: 0.8;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.login-container input {
+  margin: 10px 0;
+  padding: 8px;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #555;
+  background-color: #111;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  padding: 20px;
+}
+
+.header-right span {
+  margin-right: 10px;
+}
+
+.feed-container {
+  padding: 20px;
+}
+
+.new-post {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.new-post input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #555;
+  background-color: #111;
+  color: #fff;
+}
+
+.posts .post {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #111;
+}

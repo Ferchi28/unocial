@@ -1,0 +1,100 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(circle at top, #0a0a0a, #000);
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.login-card {
+  background: rgba(30, 30, 30, 0.9);
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(200, 100, 255, 0.3);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #c33aff, #ff52d9);
+ background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #bbb;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #1b1b1b;
+  color: white;
+  font-size: 0.95rem;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+  box-shadow: 0 0 10px #c33aff;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #c33aff, #ff52d9);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.btn-login:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.register-text {
+  margin-top: 25px;
+  color: #aaa;
+}
+
+.highlight {
+  color: #ff52d9;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.highlight:hover {
+  color: #fff;
+}
