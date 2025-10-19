@@ -1,0 +1,37 @@
+.right-panel {
+  background: #111;
+  width: 250px;
+  padding: 20px;
+  border-left: 1px solid #222;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.right-panel h3 {
+  color: #ff79c6;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.right-panel ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.right-panel li {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+  background: rgba(255, 0, 255, 0.1);
+  color: #ccc;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.right-panel li:hover {
+  background: rgba(255, 0, 255, 0.2);
+  color: #fff;
+  transform: translateX(5px);
+}

@@ -1,0 +1,68 @@
+.sidebar {
+  background: #111;
+  padding: 20px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid #222;
+  height: calc(100vh - 40px);
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  font-size: 1.6rem;
+  background: linear-gradient(90deg, #a020f0, #ff007f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu button {
+  background: none;
+  border: none;
+  color: #ccc;
+  font-size: 1rem;
+  text-align: left;
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu button:hover {
+  background: rgba(255, 0, 255, 0.1);
+  color: #fff;
+}
+
+.menu button.active {
+  background: linear-gradient(90deg, #a020f0, #ff007f);
+  color: #fff;
+}
+
+.logout-btn {
+  background: linear-gradient(90deg, #a020f0, #ff007f);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: transform 0.2s;
+  width: 100%;
+}
+
+.logout-btn:hover {
+  transform: scale(1.05);
+}

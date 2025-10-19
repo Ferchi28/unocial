@@ -1,0 +1,92 @@
+.profile-page {
+  display: grid;
+  grid-template-columns: 260px 1fr 300px;
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.profile-container {
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.profile-header {
+  background: #111;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.15);
+  transition: 0.3s;
+}
+
+.profile-header:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+}
+
+.profile-info {
+  text-align: center;
+}
+
+.profile-info h1 {
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #a020f0, #ff007f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.8rem;
+}
+
+.user-faculty,
+.user-career {
+  color: #ccc;
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+.join-date {
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 15px;
+}
+
+.profile-content {
+  background: #111;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.15);
+  transition: 0.3s;
+}
+
+.profile-content:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+}
+
+.profile-content h2 {
+  color: #ff79c6;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #333;
+}
+
+.post-card {
+  background: #111;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.15);
+  transition: 0.3s;
+}
+
+.post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+}
+
+.post-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #ff6bff;
+}
