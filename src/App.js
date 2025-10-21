@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Feed from "./components/Feed";
 import ProfilePage from "./pages/profile/{id}";
+import PostPage from "./pages/post/{id}";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/feed" element={<Feed />} />
         <Route path="/profile/:id" element={<ProfilePage />} />
+        <Route path="/post/:id" element={<PostPage />} />
       </Routes>
     </Router>
   );

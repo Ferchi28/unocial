@@ -3,7 +3,7 @@ import './PostCard.css';
 
 function PostCard({ post }) {
     return (
-        <div key={post.id_post} className="post-card">
+        <div className="post-card">
             <p>{post.contenido}</p>
             {post.imagen && <img src={post.imagen} alt="" className="post-image" />}
             <p className="post-date">

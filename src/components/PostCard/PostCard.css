@@ -5,6 +5,7 @@
     margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(255, 0, 255, 0.15);
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .post-card:hover {
@@ -15,7 +16,8 @@
 .post-card .post-image {
     width: auto;
     max-width: 70%;
-    height: 500px;
+    height: auto;
+    max-height: 500px;
     object-fit: cover;
     border-radius: 12px;
     margin: 10px 0;

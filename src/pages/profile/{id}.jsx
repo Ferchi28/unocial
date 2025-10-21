@@ -17,13 +17,15 @@ function ProfilePage({ username, onLogout }) {
             try {
                 // Fetch user profile data
                 const profileResponse = await fetch(`http://localhost:3000/api/user/${id}`);
+                if (!profileResponse.ok) throw new Error(`Failed to fetch profile: ${profileResponse.status}`);
                 const profileData = await profileResponse.json();
-                setUserProfile(profileData[0]);
+                setUserProfile(Array.isArray(profileData) ? profileData[0] : profileData);
 
-                // Fetch user posts (you'll need to create this endpoint)
+                // Fetch user posts
                 const postsResponse = await fetch(`http://localhost:3000/api/post/user/${id}`);
+                if (!postsResponse.ok) throw new Error(`Failed to fetch posts: ${postsResponse.status}`);
                 const postsData = await postsResponse.json();
-                setUserPosts(postsData);
+                setUserPosts(Array.isArray(postsData) ? postsData : []);
             } catch (error) {
                 console.error('Error fetching user data:', error);
             } finally {

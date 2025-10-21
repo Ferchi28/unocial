@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Sidebar from "./Sidebar/Sidebar";
 import RightPanel from "./RightPanel/RightPanel";
 import "./Feed.css";
@@ -24,6 +25,12 @@ function Feed() {
   };
 
   const handleCreatePost = async () => {
+    const id_usuario = localStorage.getItem('userId');
+    if (!id_usuario) {
+        alert('Debes iniciar sesión para publicar');
+        return;
+    }
+
     try {
       const response = await fetch('http://localhost:3000/api/post', {
         method: 'POST',
@@ -31,17 +38,21 @@ function Feed() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          content: newPost,
-          // Add user information when auth is implemented
+          contenido: newPost,
+          id_usuario: id_usuario
         }),
       });
       
-      if (response.ok) {
-        setNewPost("");
-        fetchPosts(); // Refresh posts after creating new one
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || 'Error al crear la publicación');
       }
+
+      setNewPost("");
+      fetchPosts(); // Refresh posts after creating new one
     } catch (error) {
       console.error('Error creating post:', error);
+      alert(error.message);
     }
   };
 
@@ -63,12 +74,22 @@ function Feed() {
         </div>
 
         {posts.map((post) => (
-          <div key={post.id_post} className="post-card">
-            <a className="user-link" href={`/profile/${post.id_usuario}`}>{post.nombre + ' ' + post.apellido_pa}</a>
-            <p>{post.contenido}</p>
-              <img src={post.imagen} alt='' className="post-image" />
-            <p className="post-date">Publicado {new Date(post.fecha_publicacion).toLocaleDateString("es-MX")}</p>
-          </div>
+          <Link 
+            key={post.id_post}
+            to={`/post/${post.id_post}`}
+            className="post-link"
+          >
+            <div className="post-card">
+              <a className="user-link" onClick={e => e.stopPropagation()} href={`/profile/${post.id_usuario}`}>
+                {post.nombre + ' ' + post.apellido_pa}
+              </a>
+              <p>{post.contenido}</p>
+              {post.imagen && <img src={post.imagen} alt="" className="post-image" />}
+              <p className="post-date">
+                Publicado {new Date(post.fecha_publicacion).toLocaleDateString("es-MX")}
+              </p>
+            </div>
+          </Link>
         ))}
       </main>
 
