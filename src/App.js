@@ -6,6 +6,8 @@ import Feed from "./components/Feed";
 import ProfilePage from "./pages/profile/{id}";
 import PostPage from "./pages/post/{id}";
 
+const apiUrl = 'http://localhost:3000';
+
 function App() {
   return (
     <Router>
