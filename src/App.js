@@ -5,6 +5,8 @@ import Login from "./components/Login";
 import Feed from "./components/Feed";
 import ProfilePage from "./pages/profile/{id}";
 import PostPage from "./pages/post/{id}";
+import OffersPage from "./pages/offers/OffersPage";
+import CommunitiesPage from "./pages/communities/CommunitiesPage";
 
 const apiUrl = 'http://localhost:3000';
 
@@ -16,6 +18,8 @@ function App() {
         <Route path="/feed" element={<Feed />} />
         <Route path="/profile/:id" element={<ProfilePage />} />
         <Route path="/post/:id" element={<PostPage />} />
+        <Route path="/yovendo/" element={<OffersPage />} />
+        <Route path="/comunidades/" element={<CommunitiesPage />}/>
       </Routes>
     </Router>
   );
