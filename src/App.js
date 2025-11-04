@@ -7,6 +7,7 @@ import ProfilePage from "./pages/profile/{id}";
 import PostPage from "./pages/post/{id}";
 import OffersPage from "./pages/offers/OffersPage";
 import CommunitiesPage from "./pages/communities/CommunitiesPage";
+import MessagesPage from "./pages/messages/MessagesPage";
 
 const apiUrl = 'http://localhost:3000';
 
@@ -20,6 +21,8 @@ function App() {
         <Route path="/post/:id" element={<PostPage />} />
         <Route path="/yovendo/" element={<OffersPage />} />
         <Route path="/comunidades/" element={<CommunitiesPage />}/>
+        <Route path="/messages" element={<MessagesPage/>} />
+        <Route path="/messages/:userId" element={<MessagesPage/>} />
       </Routes>
     </Router>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import './PostCard.css';
+import { formatDate } from '../../lib/dateParser';
 const apiUrl = 'http://localhost:3000';
 function PostCard({ post }) {
     return (
@@ -7,7 +8,7 @@ function PostCard({ post }) {
             <p>{post.contenido}</p>
             {post.imagen && post.imagen.startsWith('/') ? <img src={`${apiUrl}${post.imagen}`} alt="" className="post-image" /> : <img src={post.imagen} alt="" className="post-image" />}
             <p className="post-date">
-                Publicado {new Date(post.fecha_publicacion).toLocaleDateString("es-MX")}
+                Publicado {formatDate(post.fecha_publicacion)}
             </p>
         </div>
     );

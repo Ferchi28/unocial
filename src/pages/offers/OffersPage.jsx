@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import RightPanel from '../../components/RightPanel/RightPanel';
 import './offers.css';
+import { formatDate } from '../../lib/dateParser';
 
 const apiUrl = 'http://localhost:3000';
 
+
+
 function OffersPage({ username, onLogout }) {
+    const navigate = useNavigate();
     const [activeMenu, setActiveMenu] = useState("ofertas");
     const [offers, setOffers] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -16,6 +21,9 @@ function OffersPage({ username, onLogout }) {
         descripcion: '',
         precio: ''
     });
+    const handleContactar = (idUsuario) => {
+        navigate(`/messages/${idUsuario}`);
+    };
 
     useEffect(() => {
         fetchOffers();
@@ -26,6 +34,7 @@ function OffersPage({ username, onLogout }) {
             const response = await fetch('http://localhost:3000/api/offers');
             const data = await response.json();
             setOffers(Array.isArray(data) ? data : []);
+            console.log('Fetched offers:', data);
         } catch (error) {
             console.error('Error fetching offers:', error);
         } finally {
@@ -117,11 +126,18 @@ function OffersPage({ username, onLogout }) {
                                     </div>
                                 )}
                                 <div className="offer-content">
-                                    <h3 className="offer-name">{offer.nombre}</h3>
+                                    <h3 className="offer-name">{offer.nombre_oferta}</h3>
+                                    <span className='offer-offerer'>Vendido por {offer.nombre} {offer.apellido_pa}</span>
+                                    <span className="offer-date">Publicado {formatDate(offer.fecha_publicacion)}</span>
                                     <p className="offer-description">{offer.descripcion}</p>
                                     <div className="offer-footer">
                                         <span className="offer-price">${parseFloat(offer.precio).toFixed(2)}</span>
-                                        <button className="contact-btn">Contactar</button>
+                                        <button 
+                                            className="contact-btn"
+                                            onClick={() => handleContactar(offer.id_usuario)}
+                                        >
+                                            Contactar
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -172,7 +188,7 @@ function OffersPage({ username, onLogout }) {
                                     />
                                 </div>
                                 <div className="form-group">
-                                    <label>Imagen (opcional)</label>
+                                    <label>Imagen</label>
                                     <input
                                         type="file"
                                         id="offer-image-input"
